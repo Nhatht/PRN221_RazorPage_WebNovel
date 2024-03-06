@@ -1,0 +1,40 @@
+﻿@page
+@model PRN221_WebNovel.Pages.Admin.ManageGenre.DetailsModel
+@using Newtonsoft.Json
+@using PRN221_WebNovel.Models
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var userType = HttpContextAccessor.HttpContext?.Session.GetString("role");
+    var loginUserJson = HttpContextAccessor.HttpContext?.Session.GetString("loginUser");
+    var loginUser = loginUserJson != null && loginUserJson.Trim() != ""
+    ? JsonConvert.DeserializeObject<AccountViewmodel>(loginUserJson) : null;
+}
+@{
+    ViewData["Title"] = "Details";
+}
+@if (loginUser != null &&
+                loginUser.Role == "Admin")
+{
+    <h1>Details</h1>
+
+    <div>
+        <h4>Genre</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Genre.GenreName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Genre.GenreName)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Genre?.Id">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>
+}
+else
+{
+    <h1 style="color: red; font-size: 24px; text-align: center; margin-top: 50px;">Bạn không có quyền truy cập trang web này</h1>
+}

@@ -1,0 +1,36 @@
+﻿@page
+@model PRN221_WebNovel.Pages.Admin.ManageNovel.DetailsModel
+@using Newtonsoft.Json
+@using PRN221_WebNovel.Models
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var userType = HttpContextAccessor.HttpContext?.Session.GetString("role");
+    var loginUserJson = HttpContextAccessor.HttpContext?.Session.GetString("loginUser");
+    var loginUser = loginUserJson != null && loginUserJson.Trim() != ""
+    ? JsonConvert.DeserializeObject<AccountViewmodel>(loginUserJson) : null;
+}
+@{
+    ViewData["Title"] = "Details";
+}
+@if (loginUser != null &&
+                loginUser.Role == "Admin")
+{
+    <body>
+    <main>
+        <div class="chapter-wrapper container my-5">
+            <a href="#" class="text-decoration-none">
+                <h1 class="text-center text-success">@Html.DisplayFor(model => model.Novel.NovelName)</h1>
+            </a>
+            <hr class="chapter-end container-fluid">
+
+            <div class="chapter-content mb-3">
+                @Html.Raw(Model.Novel.Content)
+            </div>
+        </div>
+    </main>
+</body>
+}
+else
+{
+    <h1 style="color: red; font-size: 24px; text-align: center; margin-top: 50px;">Bạn không có quyền truy cập trang web này</h1>
+}

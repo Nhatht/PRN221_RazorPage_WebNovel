@@ -1,0 +1,127 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@using PRN221_WebNovel.Models
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var userType = HttpContextAccessor.HttpContext?.Session.GetString("role");
+    var loginUserJson = HttpContextAccessor.HttpContext?.Session.GetString("loginUser");
+    var loginUser = loginUserJson != null && loginUserJson.Trim() != ""
+    ? JsonConvert.DeserializeObject<AccountViewmodel>(loginUserJson) : null;
+    var loginUserName = loginUser != null ? loginUser.Name : null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PRN221_WebNovel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PRN221_WebNovel.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Reader/Index">PRN221_WebNovel</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        @if (loginUser == null || loginUser.Role == "Author" || loginUser.Role == "Reader")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Reader/Index">Home</a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Thể Loại
+                                </a>
+                                @await Component.InvokeAsync("GenreMenu")
+                        </li>
+                        @if (loginUser != null && loginUser.Role == "Author")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Author/Index">My Novels</a>
+                            </li>
+                        }
+                        @if (loginUser != null && loginUser.Role == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Admin/ManageAccount/Index">ManageAccount</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Admin/ManageNovel/Index">ManageNovels</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Admin/ManageGenre/Index">ManageGenre</a>
+                            </li>
+                        }
+                    </ul>
+                    @if (loginUser == null || loginUser.Role == "Reader")
+                    {
+                        <form action="/Reader/Index" method="get">
+                            <label for="search">Search</label>
+                            <input type="text" name="query" placeholder="Search novels..." />
+                            <button type="submit">Search</button>
+                        </form>
+                    } else if (loginUser.Role == "Author")
+                    {
+                        <form action="/Author/Index" method="get">
+                            <label for="search">Search</label>
+                            <input type="text" name="query" placeholder="Search novels..." />
+                            <button type="submit">Search</button>
+                        </form>
+                    }else if(loginUser.Role == "Admin")
+                    {
+                        <form action="/Admin/ManageNovel/Index" method="get">
+                            <label for="search">Search</label>
+                            <input type="text" name="query" placeholder="Search novels..." />
+                            <button type="submit">Search</button>
+                        </form>
+                    }
+                    @if (loginUserName != null)
+                    {
+                        <div class="dropdown">
+
+                            <a class="nav-link text-dark dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Welcome, @loginUserName
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" asp-area="" asp-page="/Logout">Logout</a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Register">Register</a>
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Login">Log in</a>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - PRN221_WebNovel - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

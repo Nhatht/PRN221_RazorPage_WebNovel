@@ -1,0 +1,67 @@
+﻿@page
+@model PRN221_WebNovel.Pages.Admin.ManageGenre.IndexModel
+@using Newtonsoft.Json
+@using PRN221_WebNovel.Models
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var userType = HttpContextAccessor.HttpContext?.Session.GetString("role");
+    var loginUserJson = HttpContextAccessor.HttpContext?.Session.GetString("loginUser");
+    var loginUser = loginUserJson != null && loginUserJson.Trim() != ""
+    ? JsonConvert.DeserializeObject<AccountViewmodel>(loginUserJson) : null;
+}
+@{
+    ViewData["Title"] = "Index";
+}
+@if (loginUser != null &&
+                loginUser.Role == "Admin")
+{
+    <h1>Genre Management</h1>
+
+    <div class="search-container">
+        <form method="get" asp-page="./Index">
+            <div class="form-group">
+                <div>
+                    <label for="searchQuery">Search: </label>
+                    <input type="text" id="searchQuery" name="searchQuery" class="form-control" />
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </div>
+            <div>
+                <a asp-page="Create">Create New</a>
+            </div>
+        </form>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Genre[0].Id)</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genre[0].GenreName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Genre)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GenreName)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1 style="color: red; font-size: 24px; text-align: center; margin-top: 50px;">Bạn không có quyền truy cập trang web này</h1>
+}

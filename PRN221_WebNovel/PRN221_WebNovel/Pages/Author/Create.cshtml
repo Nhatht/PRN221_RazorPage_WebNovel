@@ -1,0 +1,77 @@
+﻿@page
+@model CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+@using Newtonsoft.Json
+@using PRN221_WebNovel.Models
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var userType = HttpContextAccessor.HttpContext?.Session.GetString("role");
+    var loginUserJson = HttpContextAccessor.HttpContext?.Session.GetString("loginUser");
+    var loginUser = loginUserJson != null && loginUserJson.Trim() != ""
+    ? JsonConvert.DeserializeObject<AccountViewmodel>(loginUserJson) : null;
+}
+@if (loginUser != null &&
+                loginUser.Role == "Author")
+{
+    <h1>Create</h1>
+
+    <h4>Novel</h4>
+    <hr />
+    <div class="row">
+        <div class="col-cd-10">
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col-md-4">
+                    <label asp-for="Novel.NovelName" class="control-label"></label>
+                    <input asp-for="Novel.NovelName" class="form-control" />
+                    <span asp-validation-for="Novel.NovelName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Novel.Content" class="control-label"></label>
+                    <textarea id="myTextarea" name="Novel.Content" required="required" asp-for="Novel.Content"></textarea>
+                    <span asp-validation-for="Novel.Content" class="text-danger"></span>
+                </div>
+                @*             <div class="form-group">
+                <label asp-for="Novel.AuthorId" class="control-label"></label>
+                <select asp-for="Novel.AuthorId" class ="form-control" asp-items="ViewBag.AuthorId"></select>
+            </div> *@
+                <div class="col-md-4">
+                    <label asp-for="Novel.Genre.GenreName" class="control-label"></label>
+                    <select asp-for="Novel.GenreId" class ="form-control" asp-items="ViewBag.GenreId"></select>
+                    @* <select asp-for="Novel.GenreId" class="form-control">
+                    <option value="">Select Department</option>
+                    @foreach (var genre in Model.Genres)
+                    {
+                        <option value="@genre.Id">@genre.GenreName</option>
+                    }
+                </select> *@
+                    <span asp-validation-for="Novel.GenreId" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="Novel.AuthorId" />
+                <div class="col-md-4">
+                    <label asp-for="Novel.Image" class="control-label"></label>
+                    <input asp-for="Novel.Image" type="file" class="form-control" />
+                    <span asp-validation-for="Novel.Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("myTextarea");
+    </script>
+}
+else
+{
+    <h1 style="color: red; font-size: 24px; text-align: center; margin-top: 50px;">Bạn không có quyền truy cập trang web này</h1>
+}

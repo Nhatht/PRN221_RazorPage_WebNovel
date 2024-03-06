@@ -1,0 +1,42 @@
+﻿@page
+@model PRN221_WebNovel.Pages.LoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Space Login</title>
+    <link href="/css/login.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <div class="main">
+        <div class="main-w3l"> 
+            <h1 class="logo-w3">Space Login Form</h1>
+            <div class="w3layouts-main">
+                <h2><span>Login now</span></h2>
+                <form method="post">
+                    <input placeholder="Email" name="Email" type="email" required="">
+                    <input placeholder="Password" name="Password" type="password" required="">
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger" style="color:red">
+                            @TempData["ErrorMessage"]
+                        </div>
+                    }
+                    <input type="submit" value="Login" name="login">
+                </form>
+                <h6 style="margin-top: 20px; text-align: center;">
+                    <a href="/Register" style="text-decoration: none; color: #007bff; font-weight: bold; margin-right: 10px;">
+                        Register
+                    </a>
+                    <a href="/Reader" style="text-decoration: none; color: #007bff; font-weight: bold;">
+                        Home
+                    </a>
+                </h6>
+            </div>
+            <!-- //main -->
+        </div>
+    </div>
+</body>
+</html>

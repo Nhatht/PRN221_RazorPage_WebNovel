@@ -1,0 +1,143 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PRN221_WebNovel
+build_property.RootNamespace = PRN221_WebNovel
+build_property.ProjectDir = E:\University\FPTU\Semester_7-SP24\Data_PRN221\PRN221_WebNovel\PRN221_WebNovel\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\University\FPTU\Semester_7-SP24\Data_PRN221\PRN221_WebNovel\PRN221_WebNovel
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageAccount/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlQWNjb3VudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageAccount/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlQWNjb3VudFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageAccount/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlQWNjb3VudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageAccount/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlQWNjb3VudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageAccount/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageGenre/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlR2VucmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageGenre/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlR2VucmVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageGenre/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlR2VucmVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageGenre/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlR2VucmVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageGenre/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlR2VucmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageNovel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlTm92ZWxcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageNovel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlTm92ZWxcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Admin/ManageNovel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlTm92ZWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Author/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Author/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Author/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Author/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Author/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Reader/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVhZGVyXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Reader/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVhZGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/SearchGenre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoR2VucmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Shared/Components/GenreMenu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXENvbXBvbmVudHNcR2VucmVNZW51XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Shared/_layoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9sYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/University/FPTU/Semester_7-SP24/Data_PRN221/PRN221_WebNovel/PRN221_WebNovel/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-t0rbtg70fk

@@ -1,0 +1,36 @@
+﻿@using Newtonsoft.Json
+@using PRN221_WebNovel.Models
+@model IEnumerable<BO.Genre>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var userType = HttpContextAccessor.HttpContext?.Session.GetString("role");
+    var loginUserJson = HttpContextAccessor.HttpContext?.Session.GetString("loginUser");
+    var loginUser = loginUserJson != null && loginUserJson.Trim() != ""
+    ? JsonConvert.DeserializeObject<AccountViewmodel>(loginUserJson) : null;
+    var loginUserName = loginUser != null ? loginUser.Name : null;
+}
+@if (loginUser == null || loginUser.Role == "Reader")
+{
+    <div class="dropdown-menu" aria-labelledby="userDropdown">
+        @foreach (var genre in Model)
+        {
+            <a class="dropdown-item" asp-area="" asp-page="/Reader/Index" asp-route-genre="@genre.Id">@genre.GenreName</a>
+        }
+    </div>
+}else if (loginUser != null && loginUser.Role == "Author")
+{
+    <div class="dropdown-menu" aria-labelledby="userDropdown">
+        @foreach (var genre in Model)
+        {
+            <a class="dropdown-item" asp-area="" asp-page="/Author/Index" asp-route-genre="@genre.Id">@genre.GenreName</a>
+        }
+    </div>
+}else if (loginUser != null && loginUser.Role == "Admin")
+{
+    <div class="dropdown-menu" aria-labelledby="userDropdown">
+        @foreach (var genre in Model)
+        {
+            <a class="dropdown-item" asp-area="" asp-page="/Admin/ManageNovel/Index" asp-route-genre="@genre.Id">@genre.GenreName</a>
+        }
+    </div>
+}
